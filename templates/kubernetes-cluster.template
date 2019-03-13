@@ -145,6 +145,7 @@ Parameters:
     Type: String
     Default: m4.large
     AllowedValues:
+    - t3.micro
     - c4.2xlarge
     - c4.4xlarge
     - c4.8xlarge
