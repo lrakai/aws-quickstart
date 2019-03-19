@@ -1076,6 +1076,17 @@ Resources:
             Action:
             - s3:GetObject
             Resource: !Sub "arn:aws:s3:::${ClusterInfoBucket}/cluster-info.yaml"
+            
+      - PolicyName: S3LogAgent
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:Get*
+            - s3:List*
+            - s3:Put*
+            Resource: "*"
 
   # Resource that creates the node IAM role
   NodeInstanceProfile:
@@ -1142,6 +1153,17 @@ Resources:
             Action:
             - s3:PutObject
             Resource: !Sub "arn:aws:s3:::${ClusterInfoBucket}/cluster-info.yaml"
+            
+      - PolicyName: S3LogAgent
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:Get*
+            - s3:List*
+            - s3:Put*
+            Resource: "*"
 
   # Bind the MasterRole to a profile for the VM instance.
   MasterInstanceProfile:
